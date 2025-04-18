@@ -1,0 +1,431 @@
+[
+  {
+    "transactionId": 1,
+    "customerId": 101,
+    "name": "John Doe",
+    "date": "2024-01-15",
+    "product": "Laptop",
+    "price": 120.00
+  },
+  {
+    "transactionId": 2,
+    "customerId": 101,
+    "name": "John Doe",
+    "date": "2024-02-10",
+    "product": "Phone",
+    "price": 80.50
+  },
+  {
+    "transactionId": 3,
+    "customerId": 102,
+    "name": "Jane Smith",
+    "date": "2024-03-05",
+    "product": "Headphones",
+    "price": 60.75
+  },
+  {
+    "transactionId": 4,
+    "customerId": 103,
+    "name": "Alice Brown",
+    "date": "2024-04-22",
+    "product": "TV",
+    "price": 200.20
+  },
+  {
+    "transactionId": 5,
+    "customerId": 104,
+    "name": "Bob White",
+    "date": "2024-05-18",
+    "product": "Tablet",
+    "price": 150.99
+  },
+  {
+    "transactionId": 6,
+    "customerId": 105,
+    "name": "Emily Davis",
+    "date": "2024-06-01",
+    "product": "Smartwatch",
+    "price": 50.05
+  },
+  {
+    "transactionId": 7,
+    "customerId": 106,
+    "name": "David Lee",
+    "date": "2024-07-29",
+    "product": "Camera",
+    "price": 300.00
+  },
+  {
+    "transactionId": 8,
+    "customerId": 107,
+    "name": "Sara Green",
+    "date": "2024-08-14",
+    "product": "Bluetooth Speaker",
+    "price": 90.30
+  },
+  {
+    "transactionId": 9,
+    "customerId": 108,
+    "name": "George King",
+    "date": "2024-09-03",
+    "product": "Keyboard",
+    "price": 40.60
+  },
+  {
+    "transactionId": 10,
+    "customerId": 109,
+    "name": "Sophia Clark",
+    "date": "2024-10-27",
+    "product": "Monitor",
+    "price": 180.45
+  },
+  {
+    "transactionId": 11,
+    "customerId": 110,
+    "name": "Lucas Scott",
+    "date": "2024-11-11",
+    "product": "Laptop Case",
+    "price": 30.10
+  },
+  {
+    "transactionId": 12,
+    "customerId": 111,
+    "name": "Olivia Moore",
+    "date": "2024-12-08",
+    "product": "USB Drive",
+    "price": 15.25
+  },
+  {
+    "transactionId": 13,
+    "customerId": 112,
+    "name": "Ethan Harris",
+    "date": "2025-01-20",
+    "product": "External Hard Drive",
+    "price": 100.80
+  },
+  {
+    "transactionId": 14,
+    "customerId": 113,
+    "name": "Mia Adams",
+    "date": "2025-02-05",
+    "product": "Smartphone Case",
+    "price": 20.50
+  },
+  {
+    "transactionId": 15,
+    "customerId": 114,
+    "name": "Aiden Parker",
+    "date": "2025-03-25",
+    "product": "Wireless Earbuds",
+    "price": 130.75
+  },
+  {
+    "transactionId": 16,
+    "customerId": 115,
+    "name": "Isabella Robinson",
+    "date": "2025-04-10",
+    "product": "Gaming Chair",
+    "price": 220.90
+  },
+  {
+    "transactionId": 17,
+    "customerId": 116,
+    "name": "James Carter",
+    "date": "2025-05-02",
+    "product": "VR Headset",
+    "price": 350.25
+  },
+  {
+    "transactionId": 18,
+    "customerId": 117,
+    "name": "Charlotte Walker",
+    "date": "2025-06-19",
+    "product": "Smartphone",
+    "price": 450.50
+  },
+  {
+    "transactionId": 19,
+    "customerId": 118,
+    "name": "Michael Young",
+    "date": "2025-07-07",
+    "product": "Game Console",
+    "price": 300.75
+  },
+  {
+    "transactionId": 20,
+    "customerId": 119,
+    "name": "Amelia Allen",
+    "date": "2025-08-30",
+    "product": "Projector",
+    "price": 500.99
+  },
+  {
+    "transactionId": 21,
+    "customerId": 102,
+    "name": "Jane Smith",
+    "date": "2024-01-28",
+    "product": "Smart Speaker",
+    "price": 75.00
+  },
+  {
+    "transactionId": 22,
+    "customerId": 103,
+    "name": "Alice Brown",
+    "date": "2024-03-12",
+    "product": "Drawing Tablet",
+    "price": 110.50
+  },
+  {
+    "transactionId": 23,
+    "customerId": 104,
+    "name": "Bob White",
+    "date": "2024-06-05",
+    "product": "Wireless Mouse",
+    "price": 25.99
+  },
+  {
+    "transactionId": 24,
+    "customerId": 105,
+    "name": "Emily Davis",
+    "date": "2024-09-20",
+    "product": "Fitness Tracker",
+    "price": 45.75
+  },
+  {
+    "transactionId": 25,
+    "customerId": 106,
+    "name": "David Lee",
+    "date": "2024-11-01",
+    "product": "Webcam",
+    "price": 65.20
+  },
+  {
+    "transactionId": 26,
+    "customerId": 107,
+    "name": "Sara Green",
+    "date": "2025-01-10",
+    "product": "Desk Lamp",
+    "price": 35.00
+  },
+  {
+    "transactionId": 27,
+    "customerId": 108,
+    "name": "George King",
+    "date": "2025-04-15",
+    "product": "Ergonomic Chair",
+    "price": 280.50
+  },
+  {
+    "transactionId": 28,
+    "customerId": 109,
+    "name": "Sophia Clark",
+    "date": "2025-07-22",
+    "product": "Portable SSD",
+    "price": 160.99
+  },
+  {
+    "transactionId": 29,
+    "customerId": 110,
+    "name": "Lucas Scott",
+    "date": "2025-09-05",
+    "product": "Printer",
+    "price": 190.00
+  },
+  {
+    "transactionId": 30,
+    "customerId": 111,
+    "name": "Olivia Moore",
+    "date": "2025-12-18",
+    "product": "Drawing Pad",
+    "price": 55.75
+  },
+  {
+    "transactionId": 31,
+    "customerId": 112,
+    "name": "Ethan Harris",
+    "date": "2025-02-01",
+    "product": "Monitor Arm",
+    "price": 40.20,
+    "rewardPoints": 0.2
+  },
+  {
+    "transactionId": 32,
+    "customerId": 113,
+    "name": "Mia Adams",
+    "date": "2025-02-10",
+    "product": "Cleaning Kit",
+    "price": 15.80,
+    "rewardPoints": 0.8
+  },
+  {
+    "transactionId": 33,
+    "customerId": 114,
+    "name": "Aiden Parker",
+    "date": "2025-02-15",
+    "product": "HDMI Cable",
+    "price": 22.50,
+    "rewardPoints": 0.5
+  },
+  {
+    "transactionId": 34,
+    "customerId": 115,
+    "name": "Isabella Robinson",
+    "date": "2025-02-20",
+    "product": "Webcam Cover",
+    "price": 8.99,
+    "rewardPoints": 0.99
+  },
+  {
+    "transactionId": 35,
+    "customerId": 116,
+    "name": "James Carter",
+    "date": "2025-02-28",
+    "product": "Cable Organizer",
+    "price": 12.30,
+    "rewardPoints": 0.3
+  },
+  {
+    "transactionId": 36,
+    "customerId": 120,
+    "name": "Henry Fox",
+    "date": "2024-01-18",
+    "product": "Smartphone",
+    "price": 400.00
+  },
+  {
+    "transactionId": 37,
+    "customerId": 121,
+    "name": "Clara Adams",
+    "date": "2024-02-22",
+    "product": "Laptop Stand",
+    "price": 30.00
+  },
+  {
+    "transactionId": 38,
+    "customerId": 122,
+    "name": "Jackson King",
+    "date": "2024-03-15",
+    "product": "Phone Charger",
+    "price": 15.99
+  },
+  {
+    "transactionId": 39,
+    "customerId": 123,
+    "name": "Chloe Martinez",
+    "date": "2024-04-07",
+    "product": "Tablet Case",
+    "price": 25.49
+  },
+  {
+    "transactionId": 40,
+    "customerId": 124,
+    "name": "Liam Harris",
+    "date": "2024-05-03",
+    "product": "Smartwatch Charger",
+    "price": 22.00
+  },
+  {
+    "transactionId": 41,
+    "customerId": 125,
+    "name": "Evan Carter",
+    "date": "2024-06-17",
+    "product": "Wireless Keyboard",
+    "price": 49.99
+  },
+  {
+    "transactionId": 42,
+    "customerId": 126,
+    "name": "Mason Lee",
+    "date": "2024-07-10",
+    "product": "Bluetooth Earbuds",
+    "price": 65.75
+  },
+  {
+    "transactionId": 43,
+    "customerId": 127,
+    "name": "Isabella Miller",
+    "date": "2024-08-25",
+    "product": "Wireless Headphones",
+    "price": 120.99
+  },
+  {
+    "transactionId": 44,
+    "customerId": 128,
+    "name": "Matthew Brown",
+    "date": "2024-09-01",
+    "product": "Gaming Mouse",
+    "price": 60.00
+  },
+  {
+    "transactionId": 45,
+    "customerId": 129,
+    "name": "Emily Wilson",
+    "date": "2024-10-14",
+    "product": "LED Lights",
+    "price": 40.99
+  },
+  {
+    "transactionId": 46,
+    "customerId": 130,
+    "name": "Oliver Davis",
+    "date": "2024-11-03",
+    "product": "Bluetooth Mouse",
+    "price": 35.49
+  },
+  {
+    "transactionId": 47,
+    "customerId": 131,
+    "name": "Ava Taylor",
+    "date": "2024-12-12",
+    "product": "USB Hub",
+    "price": 18.25
+  },
+  {
+    "transactionId": 48,
+    "customerId": 132,
+    "name": "Jack Wilson",
+    "date": "2025-01-07",
+    "product": "Wireless Charger",
+    "price": 50.00
+  },
+  {
+    "transactionId": 49,
+    "customerId": 133,
+    "name": "Sophia Moore",
+    "date": "2025-02-20",
+    "product": "VR Gloves",
+    "price": 200.00
+  },
+  {
+    "transactionId": 50,
+    "customerId": 134,
+    "name": "Benjamin Evans",
+    "date": "2025-03-18",
+    "product": "Monitor Stand",
+    "price": 45.75
+  },
+  {
+    "transactionId": 51,
+    "customerId": 135,
+    "name": "Madison Lee",
+    "date": "2025-04-01",
+    "product": "External SSD",
+    "price": 130.50
+  },
+  {
+    "transactionId": 52,
+    "customerId": 136,
+    "name": "Ella Clark",
+    "date": "2025-05-25",
+    "product": "Bluetooth Speaker",
+    "price": 70.00
+  },
+  {
+    "transactionId": 53,
+    "customerId": 137,
+    "name": "Ethan Walker",
+    "date": "2025-06-12",
+    "product": "Wireless Router",
+    "price": 180.00
+  }
+]
