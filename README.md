@@ -4,9 +4,7 @@
 
 Welcome to the Retailer Reward Program web application! This application is designed to help you track and manage customer reward points based on their transactions. It provides a clear overview of transaction history, individual customer rewards, and overall reward statistics.
 
-## Accessing the Application
 
-You can access the application by visiting https://github.com/GULREZEQBAL/Retail-Rewards-App in your web browser.
 
 ## Setup (General - For Development)
 
