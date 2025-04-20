@@ -115,10 +115,10 @@ const TotalRewardsTable = ({ totalRewards }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {displayedRewards.map((_reward) => (
-              <TableRow key={_reward.name}>
-                <TableCell>{_reward.name}</TableCell>
-                <TableCell align="right">{_reward.totalPoints}</TableCell>
+            {displayedRewards.map((reward) => (
+              <TableRow key={reward.name}>
+                <TableCell>{reward.name}</TableCell>
+                <TableCell align="right">{reward.totalPoints}</TableCell>
               </TableRow>
             ))}
           </TableBody>

@@ -9,65 +9,66 @@ import { Container, Row, Col, Form } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-/**
- * The main application component that fetches transactions, calculates reward points,
- * and displays the data in tables with date filtering.
- *
- * @component
- * @returns {JSX.Element} The App component's rendered output.
- *
- */
-const App = () => {
+const calculateDefaultStartDate = () => {
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const currentMonth = today.getMonth();
 
+  const startMonth = currentMonth - 2;
+  const startYear = currentYear + Math.floor(startMonth / 12);
+  const adjustedStartMonth = (startMonth % 12 + 12) % 12;
+
+  return new Date(startYear, adjustedStartMonth, 1);
+};
+
+const App = () => {
   const [transactions, setTransactions] = useState([]);
   const [userRewards, setUserRewards] = useState([]);
   const [totalRewards, setTotalRewards] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  const [startDate, setStartDate] = useState(calculateDefaultStartDate());
+  const [endDate, setEndDate] = useState(new Date());
 
   useEffect(() => {
     const getTransactions = async () => {
       setLoading(true);
-      setError(null);
+      setErrorMessage(null);
       try {
         const data = await fetchTransactions();
-        const sortedTransactions = data.sort((a, b) => {
-          const dateA = new Date(a.date);
-          const dateB = new Date(b.date);
-          return (
-            dateA.getFullYear() - dateB.getFullYear() ||
-            dateA.getMonth() - dateB.getMonth() ||
-            dateA.getDate() - dateB.getDate()
-          );
-        });
 
-        const transactionsWithPoints = sortedTransactions.map(
-          (transaction) => ({
-            ...transaction,
-            rewardPoints: calculateRewardPoints(transaction.price),
-          })
-        );
+        const transactionsWithPoints = data.map((transaction) => ({
+          ...transaction,
+          rewardPoints: calculateRewardPoints(transaction.price),
+        }));
+
         setTransactions(transactionsWithPoints);
-        const { userRewards: calculatedUserRewards, totalRewards: calculatedTotalRewards } =
-          calculateUserRewards(transactionsWithPoints, startDate, endDate);
+
+        const {
+          userRewards: calculatedUserRewards,
+          totalRewards: calculatedTotalRewards,
+        } = calculateUserRewards(transactionsWithPoints, startDate, endDate);
+
         setUserRewards(calculatedUserRewards);
         setTotalRewards(calculatedTotalRewards);
       } catch (err) {
-        setError(err.message || "Failed to fetch transactions");
+        setErrorMessage(err.message || "Failed to fetch transactions");
       } finally {
         setLoading(false);
       }
     };
 
     getTransactions();
-  }, []);
+  }, [startDate, endDate]);
 
   useEffect(() => {
     if (transactions.length > 0) {
-      const { userRewards: calculatedUserRewards, totalRewards: calculatedTotalRewards } =
-        calculateUserRewards(transactions, startDate, endDate);
+      const {
+        userRewards: calculatedUserRewards,
+        totalRewards: calculatedTotalRewards,
+      } = calculateUserRewards(transactions, startDate, endDate);
+
       setUserRewards(calculatedUserRewards);
       setTotalRewards(calculatedTotalRewards);
     }
@@ -77,8 +78,8 @@ const App = () => {
     return <div>Loading transactions...</div>;
   }
 
-  if (error) {
-    return <div>Error loading transactions: {error}</div>;
+  if (errorMessage) {
+    return <div>Error loading transactions: {errorMessage}</div>;
   }
 
   return (
@@ -90,9 +91,7 @@ const App = () => {
           <Form.Label>Start Date</Form.Label>
           <DatePicker
             selected={startDate}
-            onChange={(date) => {
-              setStartDate(date);
-            }}
+            onChange={(date) => setStartDate(date)}
             dateFormat="dd/MM/yyyy"
           />
         </Col>
@@ -100,21 +99,27 @@ const App = () => {
           <Form.Label>End Date</Form.Label>
           <DatePicker
             selected={endDate}
-            onChange={(date) => {
-              setEndDate(date);
-            }}
+            onChange={(date) => setEndDate(date)}
             dateFormat="dd/MM/yyyy"
           />
         </Col>
       </Row>
 
       <h2>Transactions</h2>
-      <TransactionTable transactions={transactions} startDate={startDate} endDate={endDate} />
+      <TransactionTable
+        transactions={transactions}
+        startDate={startDate}
+        endDate={endDate}
+      />
 
       <br />
 
       <h2>User Rewards (by Month)</h2>
-      <UserRewardsTable userRewards={userRewards} startDate={startDate} endDate={endDate} />
+      <UserRewardsTable
+        userRewards={userRewards}
+        startDate={startDate}
+        endDate={endDate}
+      />
 
       <br />
 

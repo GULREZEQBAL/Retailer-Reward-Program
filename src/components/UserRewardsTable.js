@@ -12,7 +12,7 @@ import {
   TablePagination,
 } from "@mui/material";
 import logger from "../utils/logger";
-import { getComparator } from "../utils/calculateRewards"; // Importing from utils
+import { getComparator } from "../utils/calculateRewards"; 
 
 /**
  * Checks if a value is a valid number.
@@ -68,8 +68,8 @@ const UserRewardsTable = ({ userRewards, startDate, endDate }) => {
   };
 
   const filteredUserRewards = useMemo(() => {
-    return userRewards.filter((_reward) => {
-      const rewardDate = new Date(_reward.year, _reward.month - 1, 1);
+    return userRewards.filter((reward) => {
+      const rewardDate = new Date(reward.year, reward.month - 1, 1);
       rewardDate.setHours(0, 0, 0, 0);
 
       const start = startDate ? new Date(startDate.setHours(0, 0, 0, 0)) : null;
@@ -79,7 +79,7 @@ const UserRewardsTable = ({ userRewards, startDate, endDate }) => {
         (!start || rewardDate >= start) && (!end || rewardDate <= end);
 
       logger.debug("UserRewardsTable: Filtering", {
-        reward: _reward,
+        reward,
         rewardDate,
         start,
         end,
@@ -90,7 +90,7 @@ const UserRewardsTable = ({ userRewards, startDate, endDate }) => {
   }, [userRewards, startDate, endDate]);
 
   const sortedUserRewards = useMemo(() => {
-    return [...filteredUserRewards].sort(getComparator(order, orderBy)); // Using imported getComparator
+    return [...filteredUserRewards].sort(getComparator(order, orderBy)); 
   }, [filteredUserRewards, order, orderBy]);
 
   const displayedUserRewards = useMemo(() => {
@@ -106,7 +106,7 @@ const UserRewardsTable = ({ userRewards, startDate, endDate }) => {
         <Table>
           <TableHead>
             <TableRow>
-              {/* Table header for Year column */}
+              
               <TableCell>
                 <TableSortLabel
                   active={orderBy === "year"}
@@ -117,7 +117,7 @@ const UserRewardsTable = ({ userRewards, startDate, endDate }) => {
                 </TableSortLabel>
               </TableCell>
 
-              {/* Table header for Month column */}
+              
               <TableCell>
                 <TableSortLabel
                   active={orderBy === "month"}
@@ -128,31 +128,30 @@ const UserRewardsTable = ({ userRewards, startDate, endDate }) => {
                 </TableSortLabel>
               </TableCell>
 
-              {/* Table header for Customer ID */}
               <TableCell>Customer ID</TableCell>
 
-              {/* Table header for Name */}
+              
               <TableCell>Name</TableCell>
 
-              {/* Table header for Total Points */}
+              
               <TableCell>Total Points</TableCell>
             </TableRow>
           </TableHead>
 
           <TableBody>
-            {displayedUserRewards.map((_reward) => (
+            {displayedUserRewards.map((reward) => (
               <TableRow
-                key={`${_reward.customerId}-${_reward.year}-${_reward.month}`}
+                key={`${reward.customerId}-${reward.year}-${reward.month}`}
               >
-                <TableCell>{_reward.year}</TableCell>
-                <TableCell>{_reward.month}</TableCell>
+                <TableCell>{reward.year}</TableCell>
+                <TableCell>{reward.month}</TableCell>
                 <TableCell>
-                  {isValidNumber(_reward.customerId)
-                    ? _reward.customerId
+                  {isValidNumber(reward.customerId)
+                    ? reward.customerId
                     : "Invalid ID"}
                 </TableCell>
-                <TableCell>{_reward.name}</TableCell>
-                <TableCell>{_reward.totalPoints}</TableCell>
+                <TableCell>{reward.name}</TableCell>
+                <TableCell>{reward.totalPoints}</TableCell>
               </TableRow>
             ))}
           </TableBody>

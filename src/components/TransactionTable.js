@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import { visuallyHidden } from "@mui/utils";
 import logger from "../utils/logger";
-import { getComparator } from "../utils/calculateRewards"; // Correctly imported from utils
+import { getComparator } from "../utils/calculateRewards";
 
 /**
  * Table header configuration for the TransactionTable.
@@ -69,10 +69,13 @@ const TransactionTable = ({ transactions, startDate, endDate }) => {
     setCurrentPage((prev) => prev - 1);
   }, []);
 
+  /**
+   * Filters transactions based on the provided start and end dates.
+   */
   const filteredTransactions = useMemo(() => {
-    return transactions.filter((_txn) => {
-      if (!_txn.date) return false;
-      const [year, month, day] = _txn.date.split("-").map(Number);
+    return transactions.filter((txn) => {
+      if (!txn.date) return false;
+      const [year, month, day] = txn.date.split("-").map(Number);
       const transactionDate = new Date(year, month - 1, day);
 
       const isAfterOrEqualStart = !startDate || transactionDate >= startDate;
@@ -82,16 +85,25 @@ const TransactionTable = ({ transactions, startDate, endDate }) => {
     });
   }, [transactions, startDate, endDate]);
 
+  /**
+   * Sorts the filtered transactions.
+   */
   const sortedTransactions = useMemo(() => {
-    return filteredTransactions.sort(getComparator(order, orderBy)); // Using the imported getComparator function
+    return filteredTransactions.sort(getComparator(order, orderBy));
   }, [filteredTransactions, order, orderBy]);
 
+  /**
+   * Gets the current page’s slice of transactions.
+   */
   const currentTransactions = useMemo(() => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     return sortedTransactions.slice(startIndex, startIndex + itemsPerPage);
   }, [sortedTransactions, currentPage, itemsPerPage]);
 
-  const totalPages = useMemo(() => Math.ceil(sortedTransactions.length / itemsPerPage), [sortedTransactions.length]);
+  const totalPages = useMemo(
+    () => Math.ceil(sortedTransactions.length / itemsPerPage),
+    [sortedTransactions.length]
+  );
 
   return (
     <Paper elevation={3} sx={{ borderRadius: "10px", overflow: "hidden" }}>
@@ -99,14 +111,14 @@ const TransactionTable = ({ transactions, startDate, endDate }) => {
         <Table>
           <TableHead>
             <TableRow>
-              {headCells.map((_cell) => (
+              {headCells.map((cell) => (
                 <TableCell
-                  key={_cell.id}
-                  align={_cell.numeric ? "right" : "left"}
-                  padding={_cell.disablePadding ? "none" : "normal"}
-                  sortDirection={orderBy === _cell.id ? order : false}
+                  key={cell.id}
+                  align={cell.numeric ? "right" : "left"}
+                  padding={cell.disablePadding ? "none" : "normal"}
+                  sortDirection={orderBy === cell.id ? order : false}
                   sx={
-                    _cell.id === "customerId"
+                    cell.id === "customerId"
                       ? {
                           backgroundColor: "#e3f2fd",
                           fontWeight: "bold",
@@ -118,12 +130,12 @@ const TransactionTable = ({ transactions, startDate, endDate }) => {
                   }
                 >
                   <TableSortLabel
-                    active={orderBy === _cell.id}
-                    direction={orderBy === _cell.id ? order : "asc"}
-                    onClick={() => handleRequestSort(_cell.id)}
+                    active={orderBy === cell.id}
+                    direction={orderBy === cell.id ? order : "asc"}
+                    onClick={() => handleRequestSort(cell.id)}
                   >
-                    {_cell.label}
-                    {orderBy === _cell.id && (
+                    {cell.label}
+                    {orderBy === cell.id && (
                       <Box component="span" sx={visuallyHidden}>
                         {order === "desc" ? "sorted descending" : "sorted ascending"}
                       </Box>
@@ -134,8 +146,8 @@ const TransactionTable = ({ transactions, startDate, endDate }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {currentTransactions.map((_txn) => (
-              <TableRow key={_txn.id}>
+            {currentTransactions.map((txn) => (
+              <TableRow key={txn.id}>
                 <TableCell
                   component="th"
                   scope="row"
@@ -148,19 +160,19 @@ const TransactionTable = ({ transactions, startDate, endDate }) => {
                     textAlign: "center",
                   }}
                 >
-                  {_txn.customerId}
+                  {txn.customerId}
                 </TableCell>
-                <TableCell>{_txn.name}</TableCell>
+                <TableCell>{txn.name}</TableCell>
                 <TableCell>
-                  {new Date(_txn.date).toLocaleDateString("en-GB")}
+                  {new Date(txn.date).toLocaleDateString("en-GB")}
                 </TableCell>
                 <TableCell align="right">
                   {new Intl.NumberFormat("en-US", {
                     style: "currency",
                     currency: "USD",
-                  }).format(_txn.price)}
+                  }).format(txn.price)}
                 </TableCell>
-                <TableCell align="right">{_txn.rewardPoints}</TableCell>
+                <TableCell align="right">{txn.rewardPoints}</TableCell>
               </TableRow>
             ))}
           </TableBody>
