@@ -58,6 +58,8 @@ Here's an example of the application:
 
 *Shows a table displaying customer transaction history.*
 
+Test Cases -  https://github.com/GULREZEQBAL/Retailer-Reward-Program/blob/master/image.png
+
 ## Author
 
 Developed by Gulrez Eqbal
