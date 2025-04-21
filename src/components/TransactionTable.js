@@ -89,7 +89,7 @@ const TransactionTable = ({ transactions, startDate, endDate }) => {
    * Sorts the filtered transactions.
    */
   const sortedTransactions = useMemo(() => {
-    return filteredTransactions.sort(getComparator(order, orderBy));
+    return [...filteredTransactions].sort(getComparator(order, orderBy));
   }, [filteredTransactions, order, orderBy]);
 
   /**

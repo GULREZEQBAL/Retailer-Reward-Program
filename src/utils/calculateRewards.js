@@ -144,7 +144,7 @@ export const calculateUserRewards = (transactions, start, end) => {
     })
   );
 
-  // This function now returns the calculated rewards
+  
   return { userRewards: rewards, totalRewards: totalRewardsArray };
 };
 

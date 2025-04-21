@@ -23,6 +23,19 @@ const isValidNumber = (value) =>
   !isNaN(value) && value !== null && value !== undefined;
 
 /**
+ * Returns the full month name based on the month number.
+ * @param {number} monthNumber - The month number (1-12).
+ * @returns {string} The full month name.
+ */
+const getMonthName = (monthNumber) => {
+  const months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  return months[monthNumber - 1]; 
+};
+
+/**
  * Renders a table of user reward data with sorting, pagination, and date filtering.
  *
  * @component
@@ -138,7 +151,7 @@ const UserRewardsTable = ({ userRewards, startDate, endDate }) => {
                 key={`${reward.customerId}-${reward.year}-${reward.month}`}
               >
                 <TableCell>{reward.year}</TableCell>
-                <TableCell>{reward.month}</TableCell>
+                <TableCell>{getMonthName(reward.month)}</TableCell>
                 <TableCell>
                   {isValidNumber(reward.customerId)
                     ? reward.customerId
