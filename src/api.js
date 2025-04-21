@@ -1,3 +1,4 @@
+import logger from "./utils/logger"; 
 export const fetchTransactions = async () => {
   try {
     const response = await fetch('/transactions.json');
@@ -16,7 +17,7 @@ export const fetchTransactions = async () => {
 
     return sortedData;
   } catch (error) {
-    console.error("Error fetching transactions:", error);
+    logger.error("Error fetching transactions:", error);
     throw error;
   }
 };

@@ -12,7 +12,7 @@ import {
   TablePagination,
 } from "@mui/material";
 import logger from "../utils/logger";
-import { getComparator } from "../utils/calculateRewards"; 
+import { getComparator } from "../utils/calculateRewards";
 
 /**
  * Checks if a value is a valid number.
@@ -90,7 +90,7 @@ const UserRewardsTable = ({ userRewards, startDate, endDate }) => {
   }, [userRewards, startDate, endDate]);
 
   const sortedUserRewards = useMemo(() => {
-    return [...filteredUserRewards].sort(getComparator(order, orderBy)); 
+    return [...filteredUserRewards].sort(getComparator(order, orderBy));
   }, [filteredUserRewards, order, orderBy]);
 
   const displayedUserRewards = useMemo(() => {
@@ -106,7 +106,6 @@ const UserRewardsTable = ({ userRewards, startDate, endDate }) => {
         <Table>
           <TableHead>
             <TableRow>
-              
               <TableCell>
                 <TableSortLabel
                   active={orderBy === "year"}
@@ -117,7 +116,6 @@ const UserRewardsTable = ({ userRewards, startDate, endDate }) => {
                 </TableSortLabel>
               </TableCell>
 
-              
               <TableCell>
                 <TableSortLabel
                   active={orderBy === "month"}
@@ -129,12 +127,8 @@ const UserRewardsTable = ({ userRewards, startDate, endDate }) => {
               </TableCell>
 
               <TableCell>Customer ID</TableCell>
-
-              
               <TableCell>Name</TableCell>
-
-              
-              <TableCell>Total Points</TableCell>
+              <TableCell align="right">Total Points</TableCell>
             </TableRow>
           </TableHead>
 
@@ -151,7 +145,7 @@ const UserRewardsTable = ({ userRewards, startDate, endDate }) => {
                     : "Invalid ID"}
                 </TableCell>
                 <TableCell>{reward.name}</TableCell>
-                <TableCell>{reward.totalPoints}</TableCell>
+                <TableCell align="right">{reward.totalPoints}</TableCell>
               </TableRow>
             ))}
           </TableBody>
