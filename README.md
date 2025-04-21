@@ -60,6 +60,8 @@ Here's an example of the application:
 
 Test Cases -  https://github.com/GULREZEQBAL/Retailer-Reward-Program/blob/master/image.png
 
+https://github.com/GULREZEQBAL/Retailer-Reward-Program/blob/master/Total-test-Case.png
+
 ## Author
 
 Developed by Gulrez Eqbal
