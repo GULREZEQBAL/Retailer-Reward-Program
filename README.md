@@ -4,13 +4,11 @@
 
 Welcome to the Retailer Reward Program web application! This application is designed to help you track and manage customer reward points based on their transactions. It provides a clear overview of transaction history, individual customer rewards, and overall reward statistics.
 
-
-
 ## Setup (General - For Development)
 
 This project was built using React and set up with Create React App. To run this project locally for development, follow these steps:
 
-1.  **Prerequisites:** Make sure you have Node.js and npm (or yarn) installed on your machine. You can download Node.js from [https://nodejs.org/](https://nodejs.org/). npm usually comes bundled with Node.js. If you prefer yarn, you can install it globally using `npm install --global yarn`.
+1.  **Prerequisites:** Make sure you have Node.js and npm (or yarn) installed on your machine. You can download Node.js from https://nodejs.org/. npm usually comes bundled with Node.js. If you prefer yarn, you can install it globally using `npm install --global yarn`.
 2.  **Clone the Repository:** If you haven't already, clone the project repository to your local machine using Git.
 3.  **Install Dependencies:** Navigate to the project directory in your terminal and run either:
     ```bash
@@ -54,22 +52,16 @@ This project was built using React and set up with Create React App. To run this
 Here's an example of the application:
 
 ### Transactions Table
-![Screenshot of the Transactions Table](https://github.com/GULREZEQBAL/Retail-Rewards-App/blob/master/Screenshot%202025-04-14%20192823.png)
+![Screenshot of the Transactions Table](public/Screenshot%202025-04stomer transaction history.*
 
-*Shows a table displaying customer transaction history.*
-
-Test Cases -  https://github.com/GULREZEQBAL/Retailer-Reward-Program/blob/master/image.png
-
-https://github.com/GULREZEQBAL/Retailer-Reward-Program/blob/master/Total-test-Case.png
+### Test Cases
+!Test Case
+!Total Test Case
 
 ## Author
 
 Developed by Gulrez Eqbal
 
 Email - gulrez.tabrez@gmail.com
-
-
-
-
 
 Thank you for using the Retailer Reward Program!
